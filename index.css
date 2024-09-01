@@ -8,13 +8,13 @@ body {
   background-color: rgba(6, 6, 6);
   color: white;
   font-family: Arial, sans-serif;
-  margin: 0 80px;
+  margin: 0;
+  padding: 0 20px; /* Adjust padding for mobile */
 }
 
 header {
   color: #fff;
   padding: 1rem 0;
-  padding-top: 0;
   text-align: center;
 }
 
@@ -50,7 +50,7 @@ header {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  height: 500px;
+  height: 300px;
   margin: 20px 0;
 }
 
@@ -62,11 +62,16 @@ h1 {
   margin: 10px 0;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .social-links a {
   color: white;
   text-decoration: none;
-  margin: 0 2px;
-  
+  margin: 0 10px;
 }
 
 .social-links a img {
@@ -74,9 +79,11 @@ h1 {
   height: 50px;
 }
 
-
 .main {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-me {
@@ -88,19 +95,22 @@ h1 {
 .about-me-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
+  gap: 0;
+  padding: 20px 10%;
+  width: 100%;
 }
 
 .about-card {
   background: #222;
   border: 1px solid #333;
   border-radius: 5px;
-  padding: 15px; /* Reduced padding */
-  margin: 10px 0; /* Added margin to reduce overall height */
+  padding: 20px;
+  margin: 10px 0;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 200px; /* Ensures about me cards are longer than skill section */
+  min-height: 200px;
+  justify-self: center;
+  width: 90%;
 }
 
 .about-card h3 {
@@ -120,13 +130,14 @@ h1 {
 
 .skills {
   text-align: center;
+  width: 100%;
 }
 
 .skill-buttons {
   display: flex;
-  justify-content: center; /* Center the buttons */
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px; /* Add gap between buttons */
+  gap: 10px;
 }
 
 .skill-button {
@@ -134,10 +145,10 @@ h1 {
   border: 1px solid #333;
   border-radius: 5px;
   margin: 10px;
-  padding: 15px; /* Increased padding */
+  padding: 15px;
   text-align: center;
-  width: 50px; /* Increased width */
-  height: 150px; /* Increased height to make buttons larger */
+  width: 50px;
+  height: 150px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   justify-content: space-evenly;
@@ -146,18 +157,16 @@ h1 {
 }
 
 .skill-button img {
-  width: 60px; /* Increased icon size */
-  height: 60px; /* Increased icon size */
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 
 .skill-button p {
   color: #ccc;
   margin-top: auto;
-  font-size: 22px; /* Optional: Increase font size if needed */
+  font-size: 22px;
 }
-
-
 
 .skill-button:hover {
   transform: translateY(-5px);
@@ -166,6 +175,7 @@ h1 {
 
 .projects {
   text-align: center;
+  width: 100%;
 }
 
 .project-card {
@@ -196,7 +206,6 @@ h1 {
   text-decoration: none;
 }
 
-
 @media (min-width: 992px) { 
   .skill-button {
     flex: 1 1 calc(11% - 20px); /* 9 buttons per row */
@@ -205,6 +214,10 @@ h1 {
 }
 
 @media (max-width: 992px) {
+  .about-me-grid {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+  }
+
   .skill-button {
     flex: 1 1 calc(33.33% - 20px); /* Adjust for smaller screens */
     max-width: calc(33.33% - 20px);
