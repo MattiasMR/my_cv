@@ -10,6 +10,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0 20px; /* Adjust padding for mobile */
+  padding-top: 80px;
 }
 
 header {
@@ -25,6 +26,13 @@ header {
   height: 80px;
   padding: 10px 20px;
   border-bottom: 1px solid #111;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(6, 6, 6);
+  z-index: 1000;
 }
 
 .nav__left h2 {
